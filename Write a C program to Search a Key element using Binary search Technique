@@ -1,0 +1,41 @@
+#include<stdio.h>
+	// Write the code to read an array of elements
+
+	printf("Enter key element : ");
+	scanf("%d", &key);
+for (i = 0;i < n-1 ; i++){
+	for (j = i+1 ; j < n; j++){
+		if (a[i] > a[j]){
+			temp = a [i];
+			a[i]= a [j];
+			a[j] = temp;
+		}
+	}
+}
+	// Write the code to sort the elements using any sorting technique
+	
+	printf("After sorting the elements in the array are\n");
+	// Write the code to display the elements
+	for (i = 0; i < n ; i++){
+		printf("Value of a[%d] = %d\n",i,a[i]);}
+	low = 0 ; // Complete the statement
+	high = n-1; // Complete the statement
+	flag = 0;
+	// Write the code to search an element using  binary search process
+	while ( low <= high){
+		mid = (low + high)/2;
+		if(a[mid] == key){
+			flag = 1;
+			break;
+		}else if (a[mid] < key){
+			low = mid+1;
+		} else {
+			high = mid -1;
+		}
+	}
+	if (flag ) {
+		printf("The key element %d is found at the position %d\n",key,mid  ); // Complete the statement
+	} else {
+		printf("The Key element %d is not found in the array\n",  key  ); // Complete the statement
+	}
+}
