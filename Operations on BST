@@ -1,0 +1,42 @@
+struct node {
+		printf("%d ", root->data);
+		preorderInBST(root->left);
+		preorderInBST(root->right);
+	}
+}
+void postorderInBST(BSTNODE root) {
+	//write your code here..
+	if (root != NULL) {
+		postorderInBST(root->left);
+		postorderInBST(root->right);
+		printf("%d ", root->data);
+	}
+}
+BSTNODE insertNodeInBST(BSTNODE node, int ele) {
+	//write your code here..
+if (node == NULL) {
+	node = newNodeInBST(ele);
+	printf("Successfully inserted.\n");
+	return node;
+}
+if (ele <= node->data) {
+	node->left = insertNodeInBST(node->left, ele);
+} else {
+	node->right = insertNodeInBST(node->right, ele);
+}
+
+return node;
+	
+}
+
+BSTNODE searchNodeInBST(BSTNODE root, int ele) {
+	//write your code here..
+	if (root == NULL || root->data == ele)
+		return root;
+
+	if (ele < root->data)
+		return searchNodeInBST(root->left, ele);
+	else
+		return searchNodeInBST(root->right, ele);
+	
+}
