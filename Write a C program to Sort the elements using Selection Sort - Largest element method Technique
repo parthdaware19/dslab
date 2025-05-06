@@ -1,0 +1,26 @@
+#include<stdio.h>
+	// Write the code to print the given array elements before sorting
+	for(i = 0; i < n ;i++){
+		printf("Value of a[%d] = %d\n",i,a[i]);
+	}
+	for( i = n-1; i > 0;i--){
+		large = a[0];
+		index = 0;
+		for (j = 1;j <= i;j++){
+			if( a[j]>large){
+				large = a[j];
+				index = j;
+			}
+		}
+		a[index] =a[i];
+			a[i] = large;
+	}
+	// Write the code for selection sort largest element method
+	
+	printf("After sorting the elements in the array are\n");
+	// Write the code to print the given array elements after sorting
+	for(i = 0; i < n; i++){
+		printf("Value of a[%d] = %d\n", i ,a[i]);
+	}
+	
+}
